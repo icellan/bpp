@@ -75,10 +75,32 @@ A POST request needs to be sent to the API endpoint with the transaction id of t
 curl -X POST -d <JSON data> "https://blockpost.network/v1/paywall"
 ```
 
+First a payment request needs to be created. This allows the server to create a record of the action and translate any paymails into Bitcoin addresses. 
+
 The JSON payload of the paywall API request is as follows:
 
 ```json
 {
+  "action": "request",
+  "txId": "<transactionId of content being paid for>"
+}
+```
+
+This would return:
+
+```json
+{
+  "requestId": "<some request id string>",
+  "outputs": "<outputs that need to be paid, in the same format as BPP definition>"
+}
+```
+
+A payment needs to be made to each of the recipients in the output, with the correct amount. That is then POST'ed to the api point with the following data:
+
+```json
+{
+  "action": "pay",
+  "requestId": "<request id from the earlier request",
   "txId": "<transactionId of content being paid for>",
   "paymentTx": "<raw payment transaction in hex>",
   "publicKey": "<Public key of user used to encrypt the decryption key>"
