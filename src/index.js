@@ -133,7 +133,7 @@ export const BPP = class {
       if (inOutput) {
         const amountDiff = Math.abs(amount - inOutput.amount);
         const amountMax = Math.max(amount, inOutput.amount);
-        if (amountDiff / amountMax > 0.1) {
+        if (Number.isNaN(amountDiff) || Number.isNaN(amountMax) || (amountDiff / amountMax > 0.1)) {
           // difference is greater than 10%
           this.errors.push({
             address,
