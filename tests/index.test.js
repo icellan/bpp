@@ -80,7 +80,7 @@ describe('bbp', () => {
     expect(bpp.errors[1].message).toBe('Difference is greater than 10%');
   });
 
-  test('compareOutputs 2', () => {
+  test('compareOutputs 3', () => {
     const bpp = new BPP();
     const neededOutputs = [
       { address: 'test', amount: 50362 },
@@ -96,6 +96,20 @@ describe('bbp', () => {
     expect(bpp.errors.length).toBe(2);
     expect(bpp.errors[0].message).toBe('No output found for payment');
     expect(bpp.errors[1].message).toBe('No output found for payment');
+  });
+
+  test('compareOutputs empty', () => {
+    const bpp = new BPP();
+    const neededOutputs = [
+      { address: '1HgUejUeEi1as5tqeP1QvcrJumN5A97mts', amount: 0 },
+      { address: '1Z1HDmB12inMu5svMeA9YuELZtcqAczQA', amount: 5596 },
+    ];
+    const givenOutputs = [
+      { address: '1Z1HDmB12inMu5svMeA9YuELZtcqAczQA', amount: 5596 },
+      { address: '1AN3sNoqNhwsud8edaSyd72GUNTkkoocNT', amount: 2152635 },
+    ];
+    const result = bpp.compareOutputs(neededOutputs, givenOutputs);
+    expect(result).toBe(true);
   });
 
   test('isTransactionValidPaywallPayment', async () => {

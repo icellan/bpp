@@ -143,7 +143,8 @@ export const BPP = class {
           });
           allOk = false;
         }
-      } else {
+      } else if (amount > 0) {
+        // no need to check anything related to zero amounts
         this.errors.push({
           address,
           amount,
