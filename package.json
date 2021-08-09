@@ -1,6 +1,6 @@
 {
   "name": "bitcoin-bpp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Bitcoin Paywall Protocol npm module",
   "repository": {
     "type": "git",

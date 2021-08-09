@@ -174,9 +174,11 @@ export const BPP = class {
     // const neededOutputs = this.getPaymentOutput(paywallPayouts, exchangeRate);
     const neededOutputs = this.getOutputsFromString(paywallPayouts, exchangeRate);
 
+    const valid = this.compareOutputs(neededOutputs, givenOutputs);
     return {
       txId,
-      valid: this.compareOutputs(neededOutputs, givenOutputs),
+      valid,
+      errors: this.errors,
     };
   };
 };

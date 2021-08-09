@@ -4,5 +4,11 @@
     "paywallCurrency": "USD",
     "paywallPayouts": "1HgUejUeEi1as5tqeP1QvcrJumN5A97mts:0.09,1Z1HDmB12inMu5svMeA9YuELZtcqAczQA:0.01",
     "txId": "a78e5172303e629d0197b68daa2bce03ac1a5c111054d40b738cc19cc24702c0"
+  },
+  {
+    "paywallKey": "L4JmzHWnBmHR8nYM3iMaxqGgVEPqEB5PNNK7HSDfPr8Mw9Uw9Vig",
+    "paywallCurrency": "USD",
+    "paywallPayouts": "12mbe4hdfA3m4fb9kVBZgSTYMsa3DKNKta:0.00,1KRRDD5Lk2RaEE2oLdPFsPYBf9FrVDNNQm:0.01",
+    "txId": "68c55a43c6c9452bcc7b2bc28fab91bd3fad7fd9edc1d7057e61ef9409b96f4a"
   }
 ]
